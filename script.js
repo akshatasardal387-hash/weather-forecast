@@ -179,9 +179,17 @@ document.addEventListener("DOMContentLoaded", function () {
             const response = await fetch(url);
 
 
+            // ==============================
+            // IMPROVED ERROR HANDLING
+            // ==============================
+
             if (!response.ok) {
 
+                const errorData =
+                    await response.json();
+
                 throw new Error(
+                    errorData.error?.message ||
                     "Weather data not found"
                 );
             }
@@ -369,8 +377,9 @@ document.addEventListener("DOMContentLoaded", function () {
             loadingMessage.style.display = "none";
 
 
+            // Show actual API error message
             errorMessage.textContent =
-                "Unable to find weather for this location.";
+                error.message;
 
             errorMessage.style.display = "block";
         }
