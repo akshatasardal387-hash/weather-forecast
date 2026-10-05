@@ -1,0 +1,21 @@
+/* ==============================
+   RAINY WEATHER BACKGROUND
+   ============================== */
+
+body.rainy-weather {
+    background:
+        linear-gradient(
+            rgba(15, 23, 42, 0.75),
+            rgba(15, 23, 42, 0.85)
+        ),
+        repeating-linear-gradient(
+            110deg,
+            transparent 0px,
+            transparent 12px,
+            rgba(255, 255, 255, 0.12) 13px,
+            transparent 14px
+        ),
+        #1e293b;
+
+    transition: background 0.5s ease;
+}
