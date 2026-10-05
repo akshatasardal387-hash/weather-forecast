@@ -173,6 +173,11 @@ document.addEventListener("DOMContentLoaded", function () {
             errorMessage.style.display = "none";
 
 
+            // Disable buttons while loading
+            searchBtn.disabled = true;
+            locationBtn.disabled = true;
+
+
             const url =
                 `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${encodeURIComponent(location)}&days=5`;
 
@@ -382,6 +387,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 error.message;
 
             errorMessage.style.display = "block";
+
+        } finally {
+
+            // Enable buttons after loading
+            searchBtn.disabled = false;
+            locationBtn.disabled = false;
         }
     }
 
