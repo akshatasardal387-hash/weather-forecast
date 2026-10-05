@@ -39,7 +39,8 @@
         <p
             id="errorMessage"
             class="text-red-400 text-center mb-4"
-            style="display: none;">
+            style="display: none;"
+            role="alert">
         </p>
 
 
@@ -47,26 +48,29 @@
         <p
             id="loadingMessage"
             class="text-blue-400 text-center mb-4"
-            style="display: none;">
-
+            style="display: none;"
+            role="status">
             Loading weather data...
-
         </p>
 
 
         <!-- Search Section -->
-        <section class="flex justify-center gap-2 mb-4 flex-wrap">
+        <section
+            class="flex justify-center gap-2 mb-4 flex-wrap"
+            aria-label="Weather search">
 
 
             <input
                 type="text"
                 id="cityInput"
                 placeholder="Enter city name"
+                aria-label="Enter city name"
                 class="w-full max-w-md px-4 py-3 rounded-lg text-black outline-none">
 
 
             <button
                 id="searchBtn"
+                aria-label="Search weather"
                 class="w-full sm:w-auto px-6 py-3 bg-blue-500 rounded-lg font-semibold">
 
                 Search
@@ -76,6 +80,7 @@
 
             <button
                 id="locationBtn"
+                aria-label="Get weather for my current location"
                 class="w-full sm:w-auto px-6 py-3 bg-green-500 rounded-lg font-semibold">
 
                 My Location
@@ -92,6 +97,7 @@
 
             <select
                 id="recentCities"
+                aria-label="Recently searched cities"
                 class="px-4 py-3 rounded-lg text-black w-full max-w-md">
 
                 <option value="">
@@ -108,6 +114,7 @@
 
             <button
                 id="unitToggle"
+                aria-label="Change temperature unit"
                 class="px-5 py-2 bg-purple-500 rounded-lg font-semibold">
 
                 Switch to °F
@@ -119,7 +126,8 @@
 
         <!-- Current Weather -->
         <section
-            class="bg-slate-800 rounded-2xl p-6 mb-8 text-center">
+            class="bg-slate-800 rounded-2xl p-6 mb-8 text-center"
+            aria-label="Current weather">
 
 
             <!-- City Name -->
@@ -138,7 +146,7 @@
                 <img
                     id="weatherIcon"
                     src=""
-                    alt="Weather Icon"
+                    alt="Current weather condition"
                     class="w-20 h-20 mx-auto">
 
             </div>
@@ -158,7 +166,8 @@
             <p
                 id="temperatureAlert"
                 class="text-red-400 font-bold mt-3"
-                style="display: none;">
+                style="display: none;"
+                role="alert">
 
             </p>
 
@@ -179,9 +188,11 @@
 
 
                 <!-- Humidity -->
-                <div class="bg-slate-700 rounded-xl p-4">
+                <div
+                    class="bg-slate-700 rounded-xl p-4"
+                    aria-label="Humidity">
 
-                    <p class="text-2xl">
+                    <p class="text-2xl" aria-hidden="true">
                         💧
                     </p>
 
@@ -197,9 +208,11 @@
 
 
                 <!-- Wind -->
-                <div class="bg-slate-700 rounded-xl p-4">
+                <div
+                    class="bg-slate-700 rounded-xl p-4"
+                    aria-label="Wind speed">
 
-                    <p class="text-2xl">
+                    <p class="text-2xl" aria-hidden="true">
                         💨
                     </p>
 
@@ -215,9 +228,11 @@
 
 
                 <!-- Feels Like -->
-                <div class="bg-slate-700 rounded-xl p-4">
+                <div
+                    class="bg-slate-700 rounded-xl p-4"
+                    aria-label="Feels like temperature">
 
-                    <p class="text-2xl">
+                    <p class="text-2xl" aria-hidden="true">
                         🌡️
                     </p>
 
@@ -238,7 +253,7 @@
 
 
         <!-- 5 Day Forecast -->
-        <section>
+        <section aria-label="Five day weather forecast">
 
 
             <h2 class="text-xl sm:text-2xl font-bold mb-4">
