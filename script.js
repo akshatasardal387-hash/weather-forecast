@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const locationBtn = document.getElementById("locationBtn");
     const errorMessage = document.getElementById("errorMessage");
 
+    const loadingMessage =
+        document.getElementById("loadingMessage");
+
     const cityName = document.getElementById("cityName");
     const weatherIcon = document.getElementById("weatherIcon");
     const temperature = document.getElementById("temperature");
@@ -14,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const feelsLike = document.getElementById("feelsLike");
 
     const unitToggle = document.getElementById("unitToggle");
+
     const temperatureAlert =
         document.getElementById("temperatureAlert");
 
@@ -163,10 +167,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         try {
 
+            // Show loading message
+            loadingMessage.style.display = "block";
+
+            errorMessage.style.display = "none";
+
+
             const url =
                 `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${encodeURIComponent(location)}&days=5`;
 
             const response = await fetch(url);
+
 
             if (!response.ok) {
 
@@ -175,7 +186,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             }
 
+
             const data = await response.json();
+
+
+            // Hide loading message
+            loadingMessage.style.display = "none";
+
 
             console.log("Weather Data:", data);
 
@@ -346,6 +363,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Weather Error:",
                 error
             );
+
+
+            // Hide loading message
+            loadingMessage.style.display = "none";
+
 
             errorMessage.textContent =
                 "Unable to find weather for this location.";
