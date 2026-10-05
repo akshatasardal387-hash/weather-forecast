@@ -366,6 +366,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         ${day.day.avgtemp_c}°C
                     </p>
 
+                    <p class="text-sm text-gray-300">
+                        High: ${day.day.maxtemp_c}°C
+                    </p>
+
+                    <p class="text-sm text-gray-300">
+                        Low: ${day.day.mintemp_c}°C
+                    </p>
+
                     <p class="text-sm text-gray-300 mt-2">
                         ${day.day.condition.text}
                     </p>
