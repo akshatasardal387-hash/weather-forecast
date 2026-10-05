@@ -112,10 +112,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             },
 
-            function () {
+            function (error) {
 
-                errorMessage.textContent =
-                    "Unable to get your location.";
+                // Handle different location errors
+                if (error.code === 1) {
+
+                    errorMessage.textContent =
+                        "Location permission was denied. Please allow location access.";
+
+                } else if (error.code === 2) {
+
+                    errorMessage.textContent =
+                        "Your location could not be determined.";
+
+                } else if (error.code === 3) {
+
+                    errorMessage.textContent =
+                        "Location request timed out. Please try again.";
+
+                } else {
+
+                    errorMessage.textContent =
+                        "Unable to get your location.";
+                }
 
                 errorMessage.style.display = "block";
             }
