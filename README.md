@@ -28,8 +28,9 @@ A responsive weather forecast web application that displays current weather info
 ## How to Run
 
 1. Clone or download the project.
-2. Add your WeatherAPI key in `config.js`.
-3. Open `index.html` in a browser.
+2. Create a copy of `config.example.js` and rename it to `config.js`.
+3. Open `config.js` and replace `YOUR_WEATHERAPI_KEY` with your WeatherAPI key.
+4. Open `index.html` in a browser.
 
 ## Project Structure
 
@@ -39,6 +40,7 @@ weather-forecast/
 ├── index.html
 ├── style.css
 ├── script.js
+├── config.example.js
 ├── config.js
 ├── .gitignore
 └── README.md
